@@ -3,7 +3,7 @@
 ## OAuth2 Authentication & Zone License Query Flow
 
 ```mermaid
-%%{init: {'flowchart': {'curve': 'linear', 'useMaxWidth': false}, 'theme': 'base', 'primaryColor': '#667eea', 'primaryBorderColor': '#5568d3', 'lineColor': '#f39c12', 'textColor': '#2c3e50', 'fontSize': '16px'}}%%
+%%{init: {'flowchart': {'curve': 'linear', 'useMaxWidth': false}, 'theme': 'base', 'primaryColor': '#667eea', 'primaryBorderColor': '#5568d3', 'lineColor': '#60a5fa', 'textColor': '#e5e7eb', 'fontSize': '16px'}}%%
 flowchart TD
     A["🔧 START: Configuration"] --> B["📋 Credentials Setup<br/>Server, ClientID, Username, Password"]
     
@@ -48,6 +48,8 @@ flowchart TD
     class V,W,X success
     class H,Z error
     class B,C,J process
+
+    linkStyle default stroke:#60a5fa,stroke-width:2.5px,color:#e5e7eb
 ```
 
 ## Key API Concepts Visualized
