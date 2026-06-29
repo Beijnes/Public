@@ -131,14 +131,48 @@ mermaid.initialize({
 ```
 
 ### 🔍 OData Query Parameters
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| **$count=true** | Include total count in response | Enables pagination info |
-| **$skip=0** | Pagination: Skip N records | Skip first 0 records |
-| **$top=50** | Pagination: Return max N records | Return max 50 per request |
-| **$orderby=name** | Sort results | Sort by name ascending |
-| **$select=id,name,...** | Select specific fields | Reduces response payload |
-| **_=timestamp** | Cache buster | Force fresh data each call |
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>$count=true</strong></td>
+      <td>Include total count in response</td>
+      <td>Enables pagination info</td>
+    </tr>
+    <tr>
+      <td><strong>$skip=0</strong></td>
+      <td>Pagination: Skip N records</td>
+      <td>Skip first 0 records</td>
+    </tr>
+    <tr>
+      <td><strong>$top=50</strong></td>
+      <td>Pagination: Return max N records</td>
+      <td>Return max 50 per request</td>
+    </tr>
+    <tr>
+      <td><strong>$orderby=name</strong></td>
+      <td>Sort results</td>
+      <td>Sort by name ascending</td>
+    </tr>
+    <tr>
+      <td><strong>$select=id,name,...</strong></td>
+      <td>Select specific fields</td>
+      <td>Reduces response payload</td>
+    </tr>
+    <tr>
+      <td><strong>_=timestamp</strong></td>
+      <td>Cache buster</td>
+      <td>Force fresh data each call</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 🔄 Loop Through All Zones
 ```
