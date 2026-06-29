@@ -8,7 +8,7 @@ I’m Roel Beijnes, Senior Consultant for End User Computing at Previder. With a
 
 Leveraging this background, I was asked to co-develop and onboard our Managed Application Delivery Service. Today, I’m proud to own this service as Product Owner, driving its roadmap and ensuring it continues to evolve with the needs of our customers.
 
-![Corporate Logo](img/corporate_logo_RGB.png)
+![Corporate Logo](Recast%20Application%20Workspace/RestAPI/img/corporate_logo_RGB.png)
 
 
 ## Why I Started This
@@ -43,55 +43,57 @@ This blog is about exploration and learning, not replacing the supported path.
 
 ## OAuth2 Authentication & Zone License Query Flow
 
-```mermaid
-%%{init: {'flowchart': {'curve': 'linear', 'useMaxWidth': false}, 'theme': 'base', 'primaryColor': '#667eea', 'primaryBorderColor': '#5568d3', 'lineColor': '#60a5fa', 'textColor': '#e5e7eb', 'fontSize': '16px', 'themeVariables': {'edgeLabelBackground': '#111827', 'textColor': '#e5e7eb'}}}%%
+<div class="mermaid">
 flowchart TD
-    A["🔧 START: Configuration"] --> B["📋 Credentials Setup<br/>Server, ClientID, Username, Password"]
-    
-    B --> D["🔐 AUTHENTICATION STEP"]
-    
+    A["START: Configuration"] --> B["Credentials Setup<br/>Server, ClientID, Username, Password"]
+
+    B --> D["AUTHENTICATION STEP"]
+
     D --> E["POST /api/oauth2/token<br/>grant_type: password<br/>scope: idtoken content"]
-    E --> F{✅ Token OK?}
-    F -->|YES| G["🎫 Extract Bearer Token"]
-    F -->|NO| H["❌ AUTH FAILED"]
-    H --> Z["🛑 ERROR EXIT"]
-    
-    G --> I["🔑 Create Authorization Header<br/>Authorization: Bearer {token}"]
-    I --> J["⏱️ Generate Cache Buster<br/>Timestamp = Unix Milliseconds"]
-    
-    J --> K["📊 QUERY ALL ZONES"]
-        
+    E --> F{"Token OK?"}
+    F -->|YES| G["Extract Bearer Token"]
+    F -->|NO| H["AUTH FAILED"]
+    H --> Z["ERROR EXIT"]
+
+    G --> I["Create Authorization Header<br/>Authorization: Bearer {token}"]
+    I --> J["Generate Cache Buster<br/>Timestamp = Unix Milliseconds"]
+
+    J --> K["QUERY ALL ZONES"]
     K --> O["Loop all the zones"]
-    
-    O --> P["🆔 Extract: Zone ID & Name"]
-    
-    P --> R["📃 Get License Object"]
-    
-        R --> T["➕ Append to Results"]
-    
-    T --> U{More Zones?}
+    O --> P["Extract: Zone ID and Name"]
+    P --> R["Get License Object"]
+    R --> T["Append to Results"]
+    T --> U{"More Zones?"}
     U -->|YES| O
-    U -->|NO| W["📤 RETURN allLicenses"]
-    
-    
+    U -->|NO| W["RETURN allLicenses"]
+
     classDef start fill:#667eea,stroke:#5568d3,stroke-width:3px,color:#fff
     classDef auth fill:#f39c12,stroke:#e67e22,stroke-width:3px,color:#fff
     classDef query fill:#16a085,stroke:#138d75,stroke-width:3px,color:#fff
     classDef loop fill:#8e44ad,stroke:#7d3c98,stroke-width:3px,color:#fff
     classDef success fill:#27ae60,stroke:#1e8449,stroke-width:3px,color:#fff
     classDef error fill:#e74c3c,stroke:#c0392b,stroke-width:3px,color:#fff
-    classDef process fill:#3498db,stroke:#2980b9,stroke-width:2px,color:#fff
-    
+
     class A start
     class D,E,F,G,I auth
-    class K,L,M query
-    class N,O,P,Q,R,S,T,U loop
-    class V,W,X success
+    class K,O,P,R,T,U loop
     class H,Z error
-    class B,C,J process
 
     linkStyle default stroke:#60a5fa,stroke-width:2.5px,color:#e5e7eb
-```
+</div>
+
+<script type="module">
+import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+mermaid.initialize({
+  startOnLoad: true,
+  theme: "base",
+  flowchart: { curve: "linear", useMaxWidth: false },
+  themeVariables: {
+    edgeLabelBackground: "#111827",
+    textColor: "#e5e7eb"
+  }
+});
+</script>
 
 ## Key API Concepts Visualized
 
@@ -129,14 +131,48 @@ flowchart TD
 ```
 
 ### 🔍 OData Query Parameters
-| Parameter | Purpose | Example |
-|-----------|---------|---------|
-| **$count=true** | Include total count in response | Enables pagination info |
-| **$skip=0** | Pagination: Skip N records | Skip first 0 records |
-| **$top=50** | Pagination: Return max N records | Return max 50 per request |
-| **$orderby=name** | Sort results | Sort by name ascending |
-| **$select=id,name,...** | Select specific fields | Reduces response payload |
-| **_=timestamp** | Cache buster | Force fresh data each call |
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Purpose</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>$count=true</strong></td>
+      <td>Include total count in response</td>
+      <td>Enables pagination info</td>
+    </tr>
+    <tr>
+      <td><strong>$skip=0</strong></td>
+      <td>Pagination: Skip N records</td>
+      <td>Skip first 0 records</td>
+    </tr>
+    <tr>
+      <td><strong>$top=50</strong></td>
+      <td>Pagination: Return max N records</td>
+      <td>Return max 50 per request</td>
+    </tr>
+    <tr>
+      <td><strong>$orderby=name</strong></td>
+      <td>Sort results</td>
+      <td>Sort by name ascending</td>
+    </tr>
+    <tr>
+      <td><strong>$select=id,name,...</strong></td>
+      <td>Select specific fields</td>
+      <td>Reduces response payload</td>
+    </tr>
+    <tr>
+      <td><strong>_=timestamp</strong></td>
+      <td>Cache buster</td>
+      <td>Force fresh data each call</td>
+    </tr>
+  </tbody>
+</table>
 
 ### 🔄 Loop Through All Zones
 ```
@@ -235,13 +271,13 @@ In **Brave**, this looks like:
 2. Press `F12`.
 3. Go to **Network** and clear the network history.
 
-![Brave Developer Tools Network Overview](img/DeveloperEdit.png)
+![Brave Developer Tools Network Overview](Recast%20Application%20Workspace/RestAPI/img/DeveloperEdit.png)
 
 4. Perform the UI action you want to automate.
 5. Inspect URL, method, headers, and payload.
 6. Paste those details into Copilot and ask for a PowerShell equivalent.
 
-![Captured Request URL and Payload Details](img/RequestURL.png)
+![Captured Request URL and Payload Details](Recast%20Application%20Workspace/RestAPI/img/RequestURL.png)
 
 For other browsers, the screens are different, but the method is the same: inspect requests, understand payloads, then translate them into script calls.
 
@@ -254,7 +290,7 @@ Using this approach, I created a script that:
 - Pulls license details per zone
 - Returns reusable PowerShell objects for reporting and automation
 
-Script source: [restapi-blog.ps1](restapi-blog.ps1)
+Script source: [restapi-blog.ps1](Recast%20Application%20Workspace/RestAPI/restapi-blog.ps1)
 
 
 
@@ -263,6 +299,10 @@ The main gain was not just script output, but a repeatable method to learn and b
 If your background is packaging and platform operations instead of API engineering, you can still make meaningful progress.
 
 Start small, validate one call at a time, and use Copilot as a technical translator between portal behavior and script implementation.
+
+
+
+
 
 
 
