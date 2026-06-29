@@ -1,0 +1,21 @@
+# Chirpy theme related
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+*.gem
+Gemfile.lock
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local
+.env

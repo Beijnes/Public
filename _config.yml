@@ -1,0 +1,104 @@
+# The Site Configuration
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# The language of the website
+lang: en-US
+
+# Set the site's title
+title: Roel Beijnes
+
+# Set the site's description
+description: Technical blog about End User Computing, Application Delivery, PowerShell Automation, and Modern Engineering
+
+# Set the site's url
+url: "https://blog.goroel.nl"
+
+# Set the site's baseurl (for GitHub Pages, this would be your repo name if not using a custom domain)
+# baseurl: "/public"
+
+# GitHub-specific
+github:
+  username: roelbeijnes
+
+# Social media profiles
+social:
+  name: Roel Beijnes
+  links:
+    - https://www.linkedin.com/in/roelbeijnes
+    - https://github.com/roelbeijnes
+
+# Site author info
+author:
+  name: Roel Beijnes
+  email: roel@goroel.nl
+  links:
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/roelbeijnes
+    - title: GitHub
+      url: https://github.com/roelbeijnes
+
+# Site build settings
+timezone: Europe/Amsterdam
+
+# Use the Chirpy post format
+future: false
+
+# Comments section (optional - uncomment if you want to enable)
+# comments:
+#   active: disqus
+#   disqus:
+#     shortname: your-disqus-shortname
+
+# Analytics (optional)
+# google_analytics:
+#   id: your-google-analytics-id
+
+# Theme customization
+img_cdn: "https://cdn.jsdelivr.net/gh/cotes2020/chirpy-static@master"
+
+# favicon icon
+avatar: "https://avatars.githubusercontent.com/u/your-github-id"
+
+# the avatar on sidebar will be transformed into a circle
+avatar_circle: true
+
+# Site tagline (shown below title)
+tagline: "End User Computing • Application Delivery • PowerShell • Automation"
+
+# jekyll-seo-tag settings
+seo:
+  type: Person
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: powershell
+
+# Pagination settings
+paginate: 10
+
+# Exclude from processing
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - "*.gemspec"
+  - ".git"
+  - ".github"
+
+# Include
+include:
+  - _redirects
+
+# Collections
+collections:
+  tabs:
+    output: true
+    sort_by: order
