@@ -12,10 +12,10 @@ title: Roel Beijnes
 description: Technical blog about End User Computing, Application Delivery, PowerShell Automation, and Modern Engineering
 
 # Set the site's url
-url: "https://blog.goroel.nl"
+url: "https://beijnes.github.io"
 
 # Set the site's baseurl (for GitHub Pages, this would be your repo name if not using a custom domain)
-# baseurl: "/public"
+baseurl: "/Public"
 
 # GitHub-specific
 github:
