@@ -17,7 +17,7 @@ Recast Software provides a PowerShell module as the officially supported way to 
 
 Together with my colleague Ivan de Mes, I started exploring the underlying REST API to see how far we could push it. Our biggest challenge was obtaining a valid access token, and getting OAuth authentication to work wasn’t straightforward.
 
-With help from Copilot and additional information provided by Recast Software — including the JavaScript reference at
+With help from Copilot and additional information provided by Recast Software with the JavaScript reference at
 https://api.liquit.com/workspace/v2/liquit.workspace.js — I managed to build a working script that retrieves an OAuth access token. Once we had that token, the REST API opened up and we were finally able to experiment with endpoints beyond what the PowerShell module currently supports.
 
 This gives us a lot more flexibility and allows us to automate scenarios that weren’t possible before.
