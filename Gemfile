@@ -1,8 +1,6 @@
 source "https://rubygems.org"
 
 gem "jekyll", "~> 4.3"
-gem "jekyll-theme-chirpy", "~> 6.0"
-gem "jekyll-include-cache"
 
 group :jekyll_plugins do
   gem "jekyll-paginate"
@@ -11,6 +9,8 @@ group :jekyll_plugins do
   gem "jekyll-archives"
   gem "jekyll-sitemap"
   gem "jekyll-feed"
+  gem "jekyll-include-cache"
+  gem "jekyll-remote-theme"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

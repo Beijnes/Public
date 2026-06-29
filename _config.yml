@@ -82,6 +82,13 @@ kramdown:
 # Plugins required for GitHub Pages with remote_theme
 plugins:
   - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-remote-theme
 
 # Pagination settings
 paginate: 10
