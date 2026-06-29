@@ -6,7 +6,7 @@ You can find more interaction and information on [my linkedin page](https://www.
 
 ## Start Here
 
-- [Open the Recast Application Workspace REST API article](Recast_Application_Workspace/RestAPI/index.md)
+- [Open the Recast Application Workspace REST API article](blogs/RAW-restapi/index.md)
 
 ## Featured Blog Posts
 
@@ -14,7 +14,7 @@ You can find more interaction and information on [my linkedin page](https://www.
 
 A practical walkthrough of using OAuth2, REST API calls, and PowerShell to retrieve zone and license data.
 
-- [Go to the blog post](blogs/first-blog.md)
+- [Go to the blog post](blogs/RAW-restapi/index.md)
 
 ## Topics You Can Expect
 
