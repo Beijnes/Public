@@ -8,7 +8,7 @@ I’m Roel Beijnes, Senior Consultant for End User Computing at Previder. With a
 
 Leveraging this background, I was asked to co-develop and onboard our Managed Application Delivery Service. Today, I’m proud to own this service as Product Owner, driving its roadmap and ensuring it continues to evolve with the needs of our customers.
 
-![Corporate Logo](Recast%20Application%20Workspace/RestAPI/img/corporate_logo_RGB.png)
+![Corporate Logo](Recast_Application_Workspace/RestAPI/img/corporate_logo_RGB.png)
 
 
 ## Why I Started This
@@ -271,13 +271,13 @@ In **Brave**, this looks like:
 2. Press `F12`.
 3. Go to **Network** and clear the network history.
 
-![Brave Developer Tools Network Overview](Recast%20Application%20Workspace/RestAPI/img/DeveloperEdit.png)
+![Brave Developer Tools Network Overview](Recast_Application_Workspace/RestAPI/img/DeveloperEdit.png)
 
 4. Perform the UI action you want to automate.
 5. Inspect URL, method, headers, and payload.
 6. Paste those details into Copilot and ask for a PowerShell equivalent.
 
-![Captured Request URL and Payload Details](Recast%20Application%20Workspace/RestAPI/img/RequestURL.png)
+![Captured Request URL and Payload Details](Recast_Application_Workspace/RestAPI/img/RequestURL.png)
 
 For other browsers, the screens are different, but the method is the same: inspect requests, understand payloads, then translate them into script calls.
 
@@ -290,7 +290,7 @@ Using this approach, I created a script that:
 - Pulls license details per zone
 - Returns reusable PowerShell objects for reporting and automation
 
-Script source: [restapi-blog.ps1](Recast%20Application%20Workspace/RestAPI/restapi-blog.ps1)
+Script source: [restapi-blog.ps1](Recast_Application_Workspace/RestAPI/restapi-blog.ps1)
 
 
 
@@ -299,6 +299,8 @@ The main gain was not just script output, but a repeatable method to learn and b
 If your background is packaging and platform operations instead of API engineering, you can still make meaningful progress.
 
 Start small, validate one call at a time, and use Copilot as a technical translator between portal behavior and script implementation.
+
+
 
 
 
